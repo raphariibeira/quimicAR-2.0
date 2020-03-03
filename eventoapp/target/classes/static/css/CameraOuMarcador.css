@@ -1,0 +1,117 @@
+html, body {
+    background-color: #EEE;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor:pointer;
+}
+
+button:hover {
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -o-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    transform: scale(1.04);
+}
+button > label{
+    font: 26px 'Montserrat', sans-serif;
+    font-weight: semi-bold;
+
+}
+label {
+    font: 26px 'Montserrat', sans-serif;
+    font-weight: semi-bold;
+}
+
+
+.header-container{
+    display: flex;
+    align-items: center;
+
+
+}
+
+.header-txt{
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(71, 69, 69, 0.87);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 61px;
+}
+.header-img{
+    width: 120px;
+    height: 120px;
+    animation: header-img infinite 20s linear;
+    pointer-events: none;
+}
+
+.btns-container  {
+    width: 60vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /*background:red;*/
+}
+
+.btn-container{
+    width: 250px;
+    height: 200px;
+    /*background-color: blue;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.camera-btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    justify-content: center;
+
+}
+
+.marcador-btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border:none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    justify-content: center;
+
+}
+
+.btn-img{
+    width: 150px;
+    height: 150px;
+}
+
+
+
+@keyframes header-img {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

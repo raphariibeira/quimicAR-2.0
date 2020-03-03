@@ -1,0 +1,203 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+    <!--
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+    -->
+  </head>
+  <body>
+    <a-scene embedded arjs> 
+      <a-assets>
+        
+        <!-- FORMA -->
+        <a-mixin 
+            id="esfera"
+            geometry="primitive: sphere"
+        ></a-mixin>
+        
+        <!-- TAMANHO -->
+        <a-mixin
+            id="pequena"
+                 static-body
+            geometry="radius: 0.04"
+        ></a-mixin>
+        
+        <!-- COR -->
+ 
+        <a-mixin id="laranja"
+                 material="color: orange"
+        ></a-mixin>
+        <a-mixin id="azul"
+                 material="color: #89cff0"
+        ></a-mixin>
+        <a-mixin id="vermelho" 
+                 material="color: #f34336"
+        ></a-mixin>
+         <!-- POSIÇÃO -->
+        
+      </a-assets>
+      
+      <!--a-marker preset="hiro"-->
+        <a-camera 
+                position="0 0 0" 
+                user-height="0">
+        </a-camera>  
+
+        <!-- ESFERA TRANSPARENTE -->
+        <a-sphere
+        static-body
+        position="0 0 -2"
+        opacity="0.3"
+        color="lightgray"
+        radius="0.6"></a-sphere>
+
+        <!-- TEXTO -->
+        <a-text
+        value="O16 - Oxigenio"
+        color="gray"
+        position="-1 1 -2"></a-text>
+        
+      <!-- ARCO 1 - MENOR -->
+      
+
+        <a-torus
+          position="0 0 -2"
+          animation="property:rotation;
+          dur:1600;
+          loop:true;
+          easing:linear"
+          color="gray" 
+          arc="360" 
+          radius="0.3" 
+          radius-tubular="0.003"
+          rotation="360 0 360"
+          ></a-torus>
+
+          <!-- ELETRONS ARCO 1 -->
+      <a-entity
+            position="0 0 -2"
+            animation="property:rotation;
+            dur:1600;
+            loop:true;
+            easing:linear"
+            scale="0.1 0.1 0.1"
+            rotation="360 0 360"
+                >
+                <a-sphere
+                    position="3 0 0"
+                    scale="2 2 2"
+                    radius="0.2"
+                    mixin="azul"
+                    ></a-sphere>
+
+
+                <a-sphere
+                    position="-3 0 0"
+                    scale="2 2 2"
+                    mixin="azul"
+                    radius="0.2"
+                    ></a-sphere>  
+        
+      </a-entity>
+      
+        <!-- ARCO 2 - MAIOR -->
+        <a-torus
+        position="0 0 -2"
+        animation="property:rotation;
+        dur:1600;
+        loop:true;
+        easing:linear"
+        color="gray" 
+        arc="360" 
+        radius="0.5" 
+        radius-tubular="0.003"
+        rotation="360 360 360"
+        >
+        </a-torus>
+      
+        <!-- ELETRONS ARCO 2 -  -->
+        <a-entity
+            position="0 0 -2"
+            animation="property:rotation;
+            dur:1600;
+            loop:true;
+            easing:linear"
+            rotation="360 360 0"
+                  >
+          
+          <a-sphere
+          position="0 0.5 0"
+          scale="0.19 0.19 0.19"
+          mixin="azul"
+          radius="0.2"
+          ></a-sphere>
+      
+          <a-sphere
+          position="0 -0.5 0"
+          scale="0.19 0.19 0.19"
+          mixin="azul"
+          radius="0.2"
+          ></a-sphere>
+      
+          <a-sphere
+          position="-0.5 0 0"
+          scale="0.19 0.19 0.19"
+          mixin="azul"
+          radius="0.2"
+          ></a-sphere>
+      
+          <a-sphere
+          position="0.5 0 0"
+          scale="0.19 0.19 0.19"
+          mixin="azul"
+          radius="0.2"
+          ></a-sphere>
+      
+          <a-sphere
+          position="-0.5 0.09 0"
+          scale="0.19 0.19 0.19"
+          mixin="azul"
+          radius="0.2"
+          ></a-sphere>
+      
+          <a-sphere
+          position="0.5 0.09 0"
+          scale="0.19 0.19 0.19"
+          mixin="azul"
+          radius="0.2"
+          ></a-sphere>
+      
+      
+        </a-entity>
+        
+
+        <!-- NUCLEO PROTONS - (AMARELAS) -->
+      
+        <a-entity mixin="esfera laranja pequena meio" static-body position="0.001 0.03 -2" ></a-entity>
+        <a-entity mixin="esfera laranja pequena meio" static-body position="0.01 0.02 -1.9" ></a-entity>
+        <a-entity mixin="esfera laranja pequena meio" static-body position="-0.03 0.03 -2" ></a-entity>
+        <a-entity mixin="esfera laranja pequena meio" static-body position="0.01 -0.08 -2" ></a-entity>
+        <a-entity mixin="esfera laranja pequena meio" static-body position="0.01 0.1 -2" ></a-entity>
+        <a-entity mixin="esfera laranja pequena meio" static-body position="0.1 0.02 -1.9" ></a-entity>
+        <a-entity mixin="esfera laranja pequena meio" static-body position="-0.1 0.03 -2" ></a-entity>
+        <a-entity mixin="esfera laranja pequena meio" static-body position="0.01 -0.08 -2" ></a-entity>
+        
+        <!-- NUCLEO NEUTRONS - (AZUL) -->
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="0.1 0.03 -2" ></a-entity>
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="0.1 0.02 -2" ></a-entity>
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="-0.03 0.03 -2" ></a-entity>
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="0.01 -0.08 -2" ></a-entity>
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="0.01 0.1 -2" ></a-entity>
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="0.1 0.02 -1.9" ></a-entity>
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="-0.1 0.03 -2" ></a-entity>
+        <a-entity mixin="esfera vermelho pequena meio" static-body position="0.01 -0.08 -2" ></a-entity>
+      
+      
+      
+
+      <!--/a-marker-->
+      <!--a-entity camera></a-entity-->
+    </a-scene>
+  </body>
+</html>
